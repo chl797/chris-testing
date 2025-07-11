@@ -1,0 +1,37 @@
+fpath+=($HOME/.zsh/pure)
+fpath+=($HOME/.zsh/zsh-async)
+autoload -U promptinit; promptinit
+prompt pure
+
+zmodload zsh/nearcolor  # enable truecolor
+
+# Time threshold
+PURE_CMD_MAX_EXEC_TIME=5
+
+# Prompt character (❯): pinkish
+zstyle ':prompt:pure:prompt:success' color '#FF79C6'  # pink
+zstyle ':prompt:pure:prompt:error' color '#FF5555'    # red
+
+# Path color (e.g., ~/dev/pure): blue
+zstyle :prompt:pure:path color '#8BE9FD'
+
+# Git branch (master): gray
+zstyle :prompt:pure:git:branch color '#6272A4'  # lavender/grayish blue
+
+# Git arrows (⇣ ⇡): cyan
+zstyle :prompt:pure:git:arrow color '#8BE9FD'
+
+# Git dirty asterisk (*): orange
+zstyle :prompt:pure:git:dirty color '#FFB86C'
+
+# Git stash (≡): yellow/orange
+zstyle :prompt:pure:git:stash color '#F1FA8C'
+
+# Execution time: yellow
+zstyle :prompt:pure:execution_time color '#F1FA8C'
+
+# Optional
+zstyle :prompt:pure:git:stash show yes
+
+
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
